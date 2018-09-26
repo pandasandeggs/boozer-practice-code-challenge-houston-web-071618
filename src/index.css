@@ -18,10 +18,20 @@ button {
 
 .container {
   display: flex;
-  flex-direction: row;
+  flex-direction: flex;
 }
 
-.container div {
-  width: 40vw;
-  margin: 0 10px;
+#cocktail-list {
+  width: 60%;
+  float: left;
 }
+
+.floater {
+  width: 40%;
+  float: right;
+  display: block;
+}
+
+/* .container div {
+  margin: 0 10px;
+} */

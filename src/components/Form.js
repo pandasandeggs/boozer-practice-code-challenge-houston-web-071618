@@ -1,13 +1,43 @@
 import React, { Component } from 'react'
 
 class Form extends Component {
+
+  state = {
+    ingredients: []
+  }
+
+  let newIngredients
+  addIngredient = () => {
+    if(this.state.ingredients.length){
+      newIngredients = this.state.ingredients.map( ingredient => {
+        return (
+          <div className="container">
+          <p>Ingredient Name<br/>
+          <input type="text"/>
+          </p>
+
+          <p>Quantity<br/>
+          <input type="text"/>
+          </p>
+        </div>
+        )
+      })
+    }
+  }
+
+  handleClick = (event) => {
+    this.setState = ({
+      ingredients: [...this.state.newIngredients]
+    })
+  }
+
   render(){
     return (
-      <form>
+      <form className="floater">
         <h3>Create a Cocktail</h3>
 
         <p>Name</p>
-        <input type="text"/>
+        <input type="text" />
 
         <p>Description</p>
         <input type="text"/>
@@ -26,7 +56,7 @@ class Form extends Component {
           </p>
         </div>
 
-        <p><button> + </button></p>
+        <p><button onClick={this.handleClick}> + </button></p>
 
         <input type="submit"/>
       </form>
